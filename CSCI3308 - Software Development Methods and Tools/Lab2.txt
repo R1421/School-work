@@ -1,0 +1,38 @@
+Lab 2.txt
+Names:
+	Jose Canizares
+	Vincent Mahathirash
+	Raymond Duncan
+
+Step 2
+	1) Cranberry deleted, Jackfruit added, Nectarine deleted, Prickly Pear deleted
+
+	2)The arrow indicates whether the word is found in the first (<) or the second (>) file
+
+	3)The -c option shows the information in context with the default 3 lines on either side of the difference.
+
+Step 3
+	1)There are 15 lines in testPassword.txt
+
+	2)There are 692 bytes/characters in this file
+
+Step 4
+	1)root
+	  daemon
+	  sys
+	  games
+	  mail
+	  www-data
+	  backup
+	  nobody
+	  syslog
+	  whoopsie
+	  user
+	  sshd
+	  ntp
+	  mysql
+	  vboxadd
+
+	2)
+
+

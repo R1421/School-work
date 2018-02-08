@@ -1,0 +1,153 @@
+html, body {
+
+  background-color: #1c1d1c;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  height: 100%;
+
+}
+
+h1 {
+  
+  color: #e5e5f4;
+  font-weight: 700;
+  font-size: 75%;
+  
+  
+}
+
+div {
+
+  text-align: center;
+}
+
+#CenterSection {
+  
+  background-color: #35363d;
+  align-content: center;
+  margin: 0 auto;
+  width: 341px;
+  height: 100vh;
+  opacity: 0.8;
+  
+
+}
+
+/*phone version*/
+@media screen and (max-width: 590px) {
+	
+	#CenterSection {
+		
+		width: 100%;
+		
+	}
+	
+	#forms > #LogIn {
+		
+		float: center;
+		
+	}
+
+	
+	
+}
+
+#LoginSection {
+  
+  background-color: #35363d;
+  align-content: center;
+  margin: 0 auto;
+
+}
+
+#CryptoLogo {
+
+	align-content: center;
+	
+	background-color: #35363d;
+	
+	
+	
+}
+
+
+#forms {
+	margin: 0 auto;
+	width: 43%;
+	margin-top: 5em;
+	
+}
+
+#CreateAccount {
+	
+	float: left;
+	text-align: left;
+	font-weight: 700;
+	
+}
+
+#email, #password, #passwordClone0 {
+    background-color: #35363d;
+	border: none;
+    border-bottom:solid 1px #fffafa;
+    outline: none; /* prevents textbox highlight in chrome */
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+#email, #password {
+	
+   
+    
+}
+
+#passwordClone0 {
+	
+    display: block;
+    margin: 0 auto;
+    
+	
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #696162;
+    
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #9e949c;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #9e949c;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #9e949c;
+}
+
+#LogIn {
+	border: none;
+    background-color: #5e585f;
+    height:40px;
+    width:80px;
+    cursor:pointer;
+    color:#ffffff;
+    
+    float: right;
+    margin-top: 1em;
+    font-weight: 700;
+}
+
+#LogIn:hover {
+	
+	background-color: #d4d5da;
+	
+}
+
+
+p {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #9E949C;
+	font-size: 70%;
+}

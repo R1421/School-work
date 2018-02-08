@@ -1,0 +1,12 @@
+sudo rmmod simple_char_driver;
+make -C /lib/modules/3.19.8-ckt10CSCI3753/build M=/home/user/Dropbox/CSCI3753/Assignment2/module modules; 
+sudo insmod simple_char_driver.ko;
+#echo Hello > /dev/simple_char_device ; 
+
+
+#echo ;echo "====Output from cat====" ; 
+#cat /dev/simple_char_device ; 
+#echo "======End output======" ; 
+
+../itp;
+echo; sudo tail /var/log/syslog -n 30;

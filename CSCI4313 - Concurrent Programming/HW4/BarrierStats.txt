@@ -1,0 +1,38 @@
+Barrier1 tests:
+4 Threads
+Time: 41282007
+Time: 41162848
+Time: 40927144
+Time: 41743968
+Time: 41349707
+Adjusted average: 41264854
+
+16 Threads
+Time: 45635523
+Time: 42432672
+Time: 41378765
+Time: 42169756
+Time: 42336484
+Adjusted average: 42312970
+
+64 Threads
+Time: 48677135
+Time: 47040088
+Time: 56127264
+Time: 47432531
+Time: 46242299
+Adjusted average: 47716584
+
+
+
+Barrier2 Tests
+4 Threads
+Time: 51311392
+Time: 42163643
+Time: 40803191
+Time: 40910049
+Time: 40833928
+Adjusted average: 41302540
+
+16 Threads
+Execution no longer works...

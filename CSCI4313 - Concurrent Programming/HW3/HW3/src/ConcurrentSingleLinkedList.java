@@ -1,0 +1,107 @@
+import java.util.concurrent.locks.*;
+
+public class ConcurrentSingleLinkedList {
+
+	public class Node{
+		public Node succ;
+		public double value;
+		public boolean marked;
+		private Lock lock;
+		
+		public Node(double value){
+			this.value = value;
+			marked = false;
+			lock = new ReentrantLock();
+		}
+		
+		public void lock(){
+			lock.lock();
+		}
+		
+		public void unlock(){
+			lock.unlock();
+		}
+	}
+	
+	private Node head;
+	
+	public ConcurrentSingleLinkedList(){
+		head = new Node(Double.NEGATIVE_INFINITY);
+		Node tail = new Node(Double.POSITIVE_INFINITY);
+		head.succ = tail;
+	}
+	
+	public boolean validate(Node pred, Node curr){
+		return !pred.marked && !curr.marked && pred.succ == curr;
+	}
+	
+	public boolean contains(double n){
+		Node curr = head;
+		while(curr.value < n){
+			curr = curr.succ;
+		}
+		return curr.value == n && !curr.marked;
+	}
+	
+	public boolean add(double n){
+		while(true){
+			Node curr = head.succ;
+			Node pred = head;
+			while(curr.value < n){
+				pred = curr;
+				curr = curr.succ;
+			}
+			pred.lock();
+			try{
+				curr.lock();
+				try{
+					if(validate(pred,curr)){
+						if(curr.value == n){
+							return false;
+						} else{
+							Node node = new Node(n);
+							node.succ = curr;
+							pred.succ = node;
+							return true;
+						}
+					}
+				} finally{
+					curr.unlock();
+				}
+			} finally{
+				pred.unlock();
+			}
+		}
+		 
+	}
+	
+	public boolean remove(double n){
+		while(true){
+			Node curr = head.succ;
+			Node pred = head;
+			while(curr.value < n){
+				pred = curr;
+				curr = curr.succ;
+			}
+			pred.lock();
+			try{
+				curr.lock();
+				try{
+					if(validate(pred,curr)){
+						if(curr.value != n){
+							return false;
+						} else{
+							curr.marked = true;
+							pred.succ = curr.succ;
+							return true;
+						}
+					}
+				} finally{
+					curr.unlock();
+				}
+			} finally{
+				pred.unlock();
+			}
+		}
+	}
+}

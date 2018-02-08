@@ -1,0 +1,9 @@
+Initial thoughts:
+
+The EliminationBackoffStack can accomodate different numbers of pushers and poppers easily whereas this new scheme must have the same size of A and B arrays or have some other functionality that handles their different sizes
+
+The EBS takes up more memory than the proposed method because it requires that there is an exchanger (at least twice the size of the value type) for every element of the elimination array whereas the two arrays must only accomodate the values themselves
+
+I think the computation time would me more consistent with the proposed method because it blocks while calling getAndIncrement for the counters and calls one per push or pop whereas EBS calls CAS and can fail to make an exchange on the first attempt.
+
+I think EBS would be faster than the proposed method because it has more values that can be tuned to increase the probability of successful exchange without having to worry about there being a matching operation in the other array

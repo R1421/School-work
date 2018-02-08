@@ -1,0 +1,68 @@
+int divisor = filter->getDivisor();
+  int width = (input->width)-1;
+  int height = (input->height)-1;
+
+
+  for(int col = 1; col < width; col = col + 1) {
+    for(int plane = 0; plane < 3; plane++) {
+      for(int row = 1; row < height ; row = row + 2) {
+
+        int value = 0;
+        int value0 = 0;
+        int value1 = 0;
+        int value2 = 0;
+
+        int value3 = 0;
+        int value4 = 0;
+        int value5 = 0;
+        int value6 = 0;
+        int filterSize = filter->getSize();
+        int unwrap = filterSize - filterSize%3;
+        for (int j = 0; j < filterSize; j++) {
+
+          int i;
+          int x = col + j -1;
+          for (i = 0; i < unwrap; i += 3) {
+            //int factor = filter->get(i,j);
+            /*value0 = value0 +  input -> color[col + j - 1][plane][row + i - 1]
+              * factor;
+            value1 = value1 +  input -> color[col + j - 1][plane][row + i]
+              * factor;
+            value2 = value +  input -> color[col + j - 1][plane][row + i + 1]
+              * factor;*/
+            value0 = value0 +  input -> color[x][plane][row + i - 1]
+              * filter->get(i,j);
+            value1 = value1 +  input -> color[x][plane][row + i]
+              * filter->get(i+1,j);
+            value2 = value2 +  input -> color[x][plane][row + i + 1]
+              * filter->get(i+2,j);
+
+            value4 = value4 +  input -> color[x][plane][row + i]
+              * filter->get(i,j);
+            value5 = value5 +  input -> color[x][plane][row + i + 1]
+              * filter->get(i+1,j);
+            value6 = value6 +  input -> color[x][plane][row + i + 2]
+              * filter->get(i+2,j);
+          }
+
+          for(; i < filterSize; i++){
+            /*value0 = value0 +  input -> color[col + j - 1][plane][row + i - 1]
+              * filter->get(i,j);*/
+            value0 = value0 +  input -> color[x][plane][row + i - 1]
+              * filter->get(i,j);
+
+            value4 = value4 +  input -> color[x][plane][row + i]
+              * filter->get(i,j);
+          }
+        }
+        value = value0 + value1 + value2;
+        value3 = value4 + value5 + value6;
+        value = value / divisor;
+        value3 = value3/ divisor;
+        if ( value  < 0 ) { value = 0; }
+        if ( value  > 255 ) { value = 255; }
+        output -> color[col][plane][row] = value;
+        output->color[col][plane][row+1] = value3;
+      }
+    }
+  }

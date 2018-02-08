@@ -1,0 +1,69 @@
+  int divisor = filter->getDivisor();
+  int filterSize = filter->getSize();
+  int width = (input->width)-2;
+  int height = (input->height)-2;
+
+
+for(int col = 0; col < width; col = col + 1) {
+    //for(int plane = 0; plane < 3; plane++) {
+        for(int row = 0; row < height ; row = row + 1) {
+
+
+            int valuea = 0;
+            int value1a = 0;
+            int value2a = 0;
+            int value3a = 0;
+
+            int valueb = 0;
+            int value1b = 0;
+            int value2b = 0;
+            int value3b = 0;
+
+            int valuec = 0;
+            int value1c = 0;
+            int value2c = 0;
+            int value3c = 0;
+
+            for (int i = 0; i < filterSize; i += 3) {
+                filter->setRDIM(i);
+                for (int j = 0; j < filterSize; j += 3) {
+                    value1a = value1a + (input->color[col + j    ][0][row + i] * filter->get0(j  )) + (input->color[col + j    ][0][row + i + 1] * filter->get1(j  )) + (input->color[col + j    ][0][row + i + 2] * filter->get2(j  ));
+                    value2a = value2a + (input->color[col + j + 1][0][row + i] * filter->get0(j+1)) + (input->color[col + j + 1][0][row + i + 1] * filter->get1(j+1)) + (input->color[col + j + 1][0][row + i + 2] * filter->get2(j+1));
+                    value3a = value3a + (input->color[col + j + 2][0][row + i] * filter->get0(j+2)) + (input->color[col + j + 2][0][row + i + 1] * filter->get1(j+2)) + (input->color[col + j + 2][0][row + i + 2] * filter->get2(j+2));
+
+                    value1b = value1b + (input->color[col + j    ][1][row + i] * filter->get0(j  )) + (input->color[col + j    ][1][row + i + 1] * filter->get1(j  )) + (input->color[col + j    ][1][row + i + 2] * filter->get2(j  ));
+                    value2b = value2b + (input->color[col + j + 1][1][row + i] * filter->get0(j+1)) + (input->color[col + j + 1][1][row + i + 1] * filter->get1(j+1)) + (input->color[col + j + 1][1][row + i + 2] * filter->get2(j+1));
+                    value3b = value3b + (input->color[col + j + 2][1][row + i] * filter->get0(j+2)) + (input->color[col + j + 2][1][row + i + 1] * filter->get1(j+2)) + (input->color[col + j + 2][1][row + i + 2] * filter->get2(j+2));
+
+                    value1c = value1c + (input->color[col + j    ][2][row + i] * filter->get0(j  )) + (input->color[col + j    ][2][row + i + 1] * filter->get1(j  )) + (input->color[col + j    ][2][row + i + 2] * filter->get2(j  ));
+                    value2c = value2c + (input->color[col + j + 1][2][row + i] * filter->get0(j+1)) + (input->color[col + j + 1][2][row + i + 1] * filter->get1(j+1)) + (input->color[col + j + 1][2][row + i + 2] * filter->get2(j+1));
+                    value3c = value3c + (input->color[col + j + 2][2][row + i] * filter->get0(j+2)) + (input->color[col + j + 2][2][row + i + 1] * filter->get1(j+2)) + (input->color[col + j + 2][2][row + i + 2] * filter->get2(j+2));
+                }
+            }
+
+            valuea = value1a+value2a+value3a;
+            valuea = valuea / divisor;
+
+            valueb = value1b+value2b+value3b;
+            valueb = valueb / divisor;
+
+            valuec = value1c+value2c+value3c;
+            valuec = valuec / divisor;
+
+
+            if ( valuea  < 0 ) { valuea = 0; }
+            if ( valuea  > 255 ) { valuea = 255; }
+
+            if ( valueb  < 0 ) { valueb = 0; }
+            if ( valueb  > 255 ) { valueb = 255; }
+
+            if ( valuec  < 0 ) { valuec = 0; }
+            if ( valuec  > 255 ) { valuec = 255; }
+
+            output -> color[col][0][row] = valuea;
+            output -> color[col][1][row] = valueb;
+            output -> color[col][2][row] = valuec;
+        }
+    //}
+  }
+

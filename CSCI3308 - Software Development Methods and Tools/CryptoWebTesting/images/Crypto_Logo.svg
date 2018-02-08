@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%"
+	 height="256px" viewBox="256 128 512 384" enable-background="new 0 0 512 384" xml:space="preserve">
+<g id="Layer_1" display="none">
+	<circle display="inline" fill="none" stroke="#000000" cx="422.169" cy="357.488" r="164.634"/>
+	<circle display="inline" fill="none" stroke="#000000" cx="586.803" cy="357.488" r="164.634"/>
+	<path display="inline" fill="none" stroke="#000000" d="M751.437,357.488"/>
+	<line display="inline" fill="none" stroke="#000000" x1="545.645" y1="286.186" x2="422.169" y2="357.489"/>
+	<polyline display="inline" fill="none" stroke="#666666" points="463.327,286.186 525.065,250.534 483.907,250.534 
+		545.645,286.186 	"/>
+	<polyline display="inline" fill="none" stroke="#666666" points="504.486,214.882 463.328,286.186 525.065,250.534 	"/>
+	<polygon display="inline" fill="none" stroke="#666666" points="422.169,357.488 442.748,321.837 535.354,268.359 550.789,295.098 
+		442.748,357.488 	"/>
+	<line display="inline" fill="none" stroke="#666666" x1="463.327" y1="286.186" x2="504.486" y2="357.489"/>
+	<polygon display="inline" fill="none" stroke="#666666" points="504.485,357.488 566.224,321.837 586.803,357.488 	"/>
+	<polyline display="inline" fill="none" stroke="#666666" points="463.327,333.721 463.328,286.185 586.803,357.488 	"/>
+</g>
+<g id="Layer_2">
+	<path fill="none" stroke="#9b9ba1" stroke-width="12" d="M464.458,284.227"/>
+	<polyline fill="none" stroke="#9b9ba1" stroke-width="12" points="483.907,250.533 504.486,214.882 550.789,295.098 
+		483.907,333.72 442.748,357.488 422.169,357.488 442.748,321.837 504.485,286.186 483.907,250.533 463.328,286.185 463.327,311 	
+		"/>
+	<polyline fill="none" stroke="#9b9ba1" stroke-width="12" points="489.051,330.75 504.485,357.488 586.803,357.488 
+		566.224,321.837 545.645,333.721 	"/>
+	<line fill="none" stroke="#9b9ba1" stroke-width="12" x1="566.224" y1="321.837" x2="504.485" y2="357.488"/>
+	<path fill="none" stroke="#9b9ba1" stroke-width="12" d="M473.617,268.359"/>
+	<path fill="none" stroke="#9b9ba1" stroke-width="12" d="M537.927,268.359"/>
+	<path fill="none" stroke="#9b9ba1" stroke-width="12" d="M489.051,241.622"/>
+	<line fill="none" stroke="#9b9ba1" stroke-width="12" x1="504.485" y1="286.186" x2="550.789" y2="295.098"/>
+</g>
+<g id="Layer_3" display="none">
+	<g id="Layer_2_1_" display="inline">
+		<polygon fill="none" stroke="#666666" stroke-width="12" points="586.803,357.488 422.169,357.488 504.486,214.882 		"/>
+		<path fill="none" stroke="#666666" stroke-width="12" d="M483.907,250.534h41.158H483.907z"/>
+		<polyline fill="none" stroke="#666666" stroke-width="12" points="545.645,333.721 435.888,333.721 573.083,333.721 		"/>
+		<line fill="none" stroke="#666666" stroke-width="12" x1="442.748" y1="321.837" x2="535.354" y2="268.359"/>
+		<line fill="none" stroke="#666666" stroke-width="12" x1="483.907" y1="333.72" x2="550.789" y2="295.098"/>
+	</g>
+</g>
+</svg>

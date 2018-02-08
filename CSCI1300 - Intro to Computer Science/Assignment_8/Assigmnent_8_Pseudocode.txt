@@ -1,0 +1,47 @@
+#Raymond Duncan
+#Sina Aghli
+#Treasure Hunting Game Pseudocode
+
+Treasure Hunting Game
+	Define game elements(Grid/Treasures)
+	Build Gameboard and treasures
+	Initialize game
+		Listen for user guess
+			If guess is a treasure
+				Add treasure value to score
+				Delete treasure
+			Else
+				Deactivate space
+				Decrease all treasure values by 10%
+			If all treasure is found
+				End game
+	
+	GameBoard class
+		Private
+			string display = "Score"
+			int score = 0
+			int scoreLocation
+		Public
+			GameBoard(int dimension)
+				Use DMA to create a gameboard array
+			void setScore(int addScore)
+				score += addScore
+			int getScore()
+				return score
+			string getDisplay()
+				return display
+
+	Treasure class
+		Private
+			int points
+		Public
+			Treasure(int boundary)
+			While true
+				Produce random value pair in boundary
+				if values not already declared for another treasure
+					save treasure location with these values
+			~Treasure()
+
+
+**The Treasure constructor's while loop could maybe be done with a function 
+that creates all the values then creates all the treasures with those values

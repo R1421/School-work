@@ -1,0 +1,70 @@
+Raymond Duncan
+CSCI 3022
+
+*** I would like to use late days on this assignment, though I'm not sure whether I need to use 4 or 5. I haven't used any thus far though, so either will do ***
+I'll have submitted this after the election, so my prediction may be off, but I'll explain the reasoning behind my decisions as if I finished before receiving the results.
+
+
+To start, I'll try to project my understanding of regression:
+Regression is simply an attempt to fit a function to set of data points using some statistical basis. The function serves as a model of the data, and is then used to predict the outcome of new input data. The accuracy of the model often depends on the type of regression performed. There are several types of regression; to name a few, there is linear regression, polynomial regression, logistic regression, ridge regression, and lasso regression. Each regression scheme has certain situations where it is more suited than the others to model the data.
+
+Regression also depends on the features that are selected. Features are essentially the variables on which you are performing the regression. Feature selection can sometimes be difficult, but plays a vital role in forming the model, so it is very important to select meaningful features, that is, features that have an effect on the output of the model. 
+
+Before attempting to select any new features, I will try different methods of regression.
+Here are the results of various tests of the mse based on the original data:
+
+    #mod = linear_model.LinearRegression() #MSE = 2121.096713296368
+    
+    #mod = linear_model.Ridge(.5) #2113.8845100120075
+    #mod = linear_model.Ridge(.8) #2112.848964277935     ***
+    #mod = linear_model.Ridge(.2) #2116.8419143243755
+    
+    #mod = linear_model.Lasso(alpha=0.2) #2052.626114301892
+    #mod = linear_model.Lasso(alpha=0.1) #2044.6961129089418
+    #mod = linear_model.Lasso(alpha=0.3) #2072.707539293161
+    #mod = linear_model.Lasso(alpha=0.05) #2023.4943314517543
+    #mod = linear_model.Lasso(alpha=0.08) #2034.111415580015
+    mod = linear_model.Lasso(alpha=0.01) #2021.3667123442144     ***
+
+Assuming that the training data and the test data are reliable, the goal is to minimize the mse. This means that the lasso regression scheme works the best given our data, but why is that?
+According to the scikit learn documentation, lasso regression is useful for data sets with few coefficients. Since our original dataset is dependent only on a single poll for each state, this matches the situation exactly. This is opposed to basic linear and ridge regression, which are good for quick application and datasets with large coefficients respectively.
+
+Now lets look at features
+As an initial idea, lets fit the lasso regression using differing numbers of the polls for each state. Here are the results for that:
+I altered the last_poll function to allow the last n poll results for each state to be used in the training model. Here are the results for that:
+
+    With lasso regression with regularization parameter = 0.01:
+	#train_x = npolls(all_data[all_data["TOPIC"] == '2012-president']) #2021.3667123442144
+	#train_x = npolls(all_data[all_data["TOPIC"] == '2012-president'], 3) #2088.2307598216044
+	#train_x = npolls(all_data[all_data["TOPIC"] == '2012-president'], 6) #2129.078770267785
+
+    Now with 12 polls and changing regularization parameters:
+	#mod = linear_model.Lasso(alpha=0.1) #2044.6961129089418   With 6 polls: 2017.6049243788343
+    	mod = linear_model.Lasso(alpha=0.3) #2072.707539293161   With 6 polls: 1897.0808958079351  With 9 polls: 1840.4118616586254  With 12 polls: 1824.9810324044872
+    	#mod = linear_model.Lasso(alpha=0.05) #2023.4943314517543 With 6 polls: 2011.2404532238545
+
+This information suggests that a regularization parameter of 0.3 and the last 12 polls fits the data the test data the best. If this test data were known to be reliable, or if it all came from a single large dataset, the results would be more desireable.
+
+Other directions:
+I didn't get to work on the assignment as much as I would have liked, but I did have some ideas for potential parameters before the election:
+
+Time weighted averages
+    By weighing the more recent polls heavier than the earlier polls, I would hope to have painted a picture of the progression of the public's intentions when voting. I would likely have weighted them and then regularized slightly by using a log function so as not to have too much bias toward the more recent polls.
+
+Early voting results
+    I could have potentially used the results from early voting results to add to the picture of the election's standings. This makes sense to me since there could easily be people from both major parties who are so eager to vote as to send in their decision well before the election. This would only work in states with early voting though, of course.
+
+2016 Polls in certain states
+    If usig poll data from 2016 didn't match the data from the test set, I likely would have used that too for obvious reasons.
+
+Level of education in an area
+    I have heard from many sources that areas with a higher population have a tendency to vote more based on policy than confidence. This is an apparenet difference between the two main candidates in decision 2016. I would thus add level of education per capita to the model.
+
+Candidate Approval
+    I tried to find data that was readily downloadable that could give some insight into the approval ratings of the different candidates, but that proved to be difficult under the time constraint. Maybe it would have been more possible if I had more experience searching for datasets.
+
+Usage of Candidate name in social media, maybe per state
+    Another direction I condisered taking was using API's like the REST API's for twitter to get an idea for the things people were saying about the candidates. If I could seperate that by state, I could use NLP to add to the model.
+
+Mix of the above
+And of course, I could have used a combination of the above. As my dataset would have increased, this seems like a good idea, though given the results of the election and the predictions by prominent pollsters, it doesn't always work out that way.

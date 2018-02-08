@@ -1,0 +1,36 @@
+Names: 	Vincent Mahathirash
+	Jose Canizares
+	Raymond Duncan
+
+
+date: Displays the current date and time
+ls -ltr: Lists contents of current directory in using long listing format, sorted by modification time starting with the oldest first.
+cd ..: Changes current directory to parent directory of the current.
+pwd: Prints full pathname of current working directory.
+who: Prints information about who is/are currently logged in.
+whoami: Prints user name of the current user.
+man man: Displays the man page for the man command.
+env: Prints out a list of all environment variables.
+
+mkdir cs3308; cd cs3308
+mv /Documents/cs3308 /Documents/csci3308; cd /
+cp myFile.txt myFileCopy.txt
+rm myFilecopy.txt
+mkdir tmp; rm -r tmp
+cat
+less
+head
+tail
+grep -rl "the"
+readlink -f books.txt
+zip -r dir.zip .; unzip dir.zip -d tmp; tar -cf test.tar .; tar -xf test.tar -C tmp
+touch
+
+sort passwd.txt
+sort -n -k 3 -t : passwd.txt
+sort -n -k 4 -t : passwd.txt; sort -n -k 3 -t : passwd.txt
+grep Marx passwd.txt
+wc -l passwd.txt
+wc -l passwd.txt > tmp
+echo "wc -l passwd.txt" > getUniqueGID.sh
+chmod +x getUniqueGID.sh

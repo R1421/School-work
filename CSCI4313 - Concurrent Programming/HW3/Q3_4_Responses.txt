@@ -1,0 +1,37 @@
+Queston 3
+
+public class WrapAroundRegister<T> implements Register<T>{
+	private StampedValue<T>[] a_table; //array of atomic MRMW registers
+	public WrapAroundRegisters(int v, int capacity, T init) {
+		a_table = (StampedValue<T>[]) new StampedValue[capacity];
+		StampedValue<T> value = new StampedValue<T>(init % v);
+		for (int j = 0; j < a_table.length; j++) {
+			a_table[j] = value;
+		}
+	}
+	public read() {
+		StampedValue<T> max = StampedValue.MIN_VALUE;
+		for (int i = 0; i < a_table.length; i++) {
+			max = StampedValue.max(max, a_table[i]);
+		}
+		return max.value;
+	}
+	public void write(T value) {
+		int me = TheadID.get();
+		StampedValue<T> max = StampedValue.MIN_VALUE;
+		for(int i = 0; i < a_table.length; i++) {
+			max = StampedValue.max(max, a_table);
+		}
+		a_table[me] = StampedValue.max(max.stamp + 1, value % v);
+	}
+}
+//Code adapted from Atomic MRMW register in the textbook
+
+If we replace the Bakery algorithm's shared variables with safe registers mutual exclusion would not hold because you couldn't guarantee the state of the flag when checking whether it is raised.
+
+You could however replace these variables with atomic and wraparound registers because you could guarantee the state of the variables. The only downside arises when using wraparound registers, because the nature of these registers would cause unfairness with regard to the labels.
+
+
+Question 4
+
+This implementation is not atomic, nor is it regular because for a register with n processors, there can be n different values read from the register. Take for example a register with 3 processors. If all three registers simultaneously receive a write command with different values a, b, and c, an immediate read from the registers could give either a, b, or c depending on the amount of time that has passed since the initial value for that processor's local copy of the register was written.

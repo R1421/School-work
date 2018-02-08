@@ -1,0 +1,3 @@
+To run the program first type the make command
+
+After the files have been compiled, run the command < ./multi-lookup > followed by any files to process and ending with the name of the output file

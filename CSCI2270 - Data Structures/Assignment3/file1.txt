@@ -1,0 +1,20 @@
+======Main Menu=====
+1. Build Network
+2. Print Network Path
+3. Transmit Message Coast-To-Coast
+4. Add City
+5. Delete City
+6. Clear Network
+7. Quit
+===CURRENT PATH===
+Los Angeles -> Phoenix -> Denver -> Dallas -> St. Louis -> Chicago -> Atlanta -> Washington, D.C. -> New York -> Boston ->  NULL
+=================
+======Main Menu=====
+1. Build Network
+2. Print Network Path
+3. Transmit Message Coast-To-Coast
+4. Add City
+5. Delete City
+6. Clear Network
+7. Quit
+Goodbye!

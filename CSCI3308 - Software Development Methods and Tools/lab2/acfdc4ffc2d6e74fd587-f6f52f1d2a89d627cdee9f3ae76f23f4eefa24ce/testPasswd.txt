@@ -1,0 +1,15 @@
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+sys:x:3:1:sys:/dev:/usr/sbin/nologin
+games:x:5:2:games:/usr/games:/usr/sbin/nologin
+mail:x:8:5:mail:/var/mail:/usr/sbin/nologin
+www-data:x:33:3:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:2:backup:/var/backups:/usr/sbin/nologin
+nobody:x:65534:1337:nobody:/nonexistent:/usr/sbin/nologin
+syslog:x:101:1000::/home/syslog:/bin/false
+whoopsie:x:109:99::/nonexistent:/bin/false
+user:x:1000:1000:edco8700,,,,:/home/user:/bin/bash
+sshd:x:116:1337::/var/run/sshd:/usr/sbin/nologin
+ntp:x:117:99::/home/ntp:/bin/false
+mysql:x:118:999:MySQL Server,,,:/nonexistent:/bin/false
+vboxadd:x:999:1::/var/run/vboxadd:/bin/false

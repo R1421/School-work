@@ -1,0 +1,8 @@
+Raymond Duncan
+CSCI 3022
+
+The general approach that I took to complete this homework was to first complete the parts that I already knew how to solve and then spend the bulk of my time on the later questions. I originally tried tocomplete the tasks using generators, but that proved too difficult (I'll need to look into improving my skills in that later).
+
+The only external resources I used for this project were documentation pages for the included libraries. 
+
+I found the distinction between the two different instances of New Jersey District 1 to add to the confusion/difficulty of the assignment since only one of the two instances were correct.

@@ -1,0 +1,8 @@
+FN LN Lab HW1 HW2 HW3 HW4
+Ryan Slaven 1 1 0 1 1
+Jephthah Eustathios 0 1 0 1 0
+Andreas Saša 1 0 1 0 1
+Godofredo Gerard 1 1 1 1 1
+Edwin Babur 1 0 1 1 1
+Ahmad Marin 0 0 0 0 0
+Jett Marko 1 1 0 1 1

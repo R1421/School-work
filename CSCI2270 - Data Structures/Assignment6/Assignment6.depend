@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1425874347 source:/home/r1413/Dropbox/CSCI2270/Assignments/Assignment6/Assignment6.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string>
+	"movieTree.h"
+	"json/json.h"
+
+1425873214 /home/r1413/Dropbox/CSCI2270/Assignments/Assignment6/movieTree.h
+	<json/json.h>
+
+1425878957 source:/home/r1413/Dropbox/CSCI2270/Assignments/Assignment6/movieTree.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<cstdlib>
+	"movieTree.h"
+

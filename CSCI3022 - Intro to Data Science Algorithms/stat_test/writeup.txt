@@ -1,0 +1,6 @@
+Raymond Duncan
+CSCI 3022
+
+My approach for this assignmet was to take each function one by one and use the material from the class to implement the functions. This is mostly true for the chisquare and the t-test functions. There was a little trial and error, but I was able to learn from the mistakes I made as I completed the assignment.
+
+Some wierd bigrams that shouldn't have been there are things like (u,n) and (washington,d) which probably resulted from cleaning sencences of punctuation and not adding sentence end and start tags.

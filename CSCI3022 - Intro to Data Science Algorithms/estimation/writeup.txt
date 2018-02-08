@@ -1,0 +1,11 @@
+Raymond Duncan
+HW2 Writeup
+
+For this assignment I started by looking at the included libraries and the functions that were already written and then tried playing with Counters and Sets in python shell. Then I knocked out all the functions one by one.
+
+For the state of Colorado, Obama won four of the seven districts
+
+Here's an interesting word that word that Obama used that no previous president has used: quagmire
+An interesting bigram that only Obama used is: ("isolating", "ourselves")
+
+Based on the histograms, I think that using a normal distribution to model this data is reasonable, but there is probably something that is better.

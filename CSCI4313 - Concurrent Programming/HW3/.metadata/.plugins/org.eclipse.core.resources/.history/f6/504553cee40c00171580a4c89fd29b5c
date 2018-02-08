@@ -1,0 +1,29 @@
+
+public class ConcurrentHashTable {
+
+	private ConcurrentSingleLinkedList[] table;
+	private int size;
+	public ConcurrentHashTable(int size){
+		this.size = size;
+		table = new ConcurrentSingleLinkedList[size];
+		for(int i = 0; i < size; i++){
+			table[i] = new ConcurrentSingleLinkedList();
+		}
+	}
+	
+	private int hash(int n){
+		return n % size;
+	}
+	
+	public boolean contains(double n){
+		return table[hash((int) n)].contains(n);
+	}
+	
+	public boolean add(double n){
+		return table[hash((int) n)].add(n);
+	}
+	
+	public boolean remove(double n){
+		return table[hash((int) n)].remove(n);
+	}
+}

@@ -1,0 +1,29 @@
+Given are a list of places
+Create a list of all the places
+Designate a place to start
+Pop start out of the list
+Create an empty list for locations in order
+Create an empty list for the distances between successive locations
+Create a variable which stores your current location; It should start with the start location
+
+
+
+Place the following in a while loop:
+If the location list is empty:
+		Add the start location to the ordered location list
+		Add the distance to the start to the successive distance list
+		Set current location to start
+		Exit the while loop
+For the remaining locations in the list
+	
+		
+	If distance A is closer to the current position than the other locations
+		Add A to the ordered location list
+		Add the distance to A to the distance list
+		Pop A out of the location list
+		Set Current location to A
+
+
+
+Print the ordered location list and the succesive distance list
+Print the total distance traveled

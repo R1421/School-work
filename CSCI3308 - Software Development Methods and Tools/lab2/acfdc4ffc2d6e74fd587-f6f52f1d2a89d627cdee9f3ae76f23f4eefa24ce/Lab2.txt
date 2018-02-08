@@ -1,0 +1,109 @@
+Lab 2.txt
+Names:
+	Jose Canizares
+	Vincent Mahathirash
+	Raymond Duncan
+
+Step 2
+	1) Cranberry deleted, Jackfruit added, Nectarine deleted, Prickly Pear deleted
+
+	2)The arrow indicates whether the word is found in the first (<) or the second (>) file
+
+	3)The -c option shows the information in context with the default 3 lines on either side of the difference.
+
+Step 3
+	1)There are 15 lines in testPassword.txt
+
+	2)There are 692 bytes/characters in this file
+
+Step 4
+	1)root
+	  daemon
+	  sys
+	  games
+	  mail
+	  www-data
+	  backup
+	  nobody
+	  syslog
+	  whoopsie
+	  user
+	  sshd
+	  ntp
+	  mysql
+	  vboxadd
+
+	1)LN HW1
+	 Slaven 1
+	 Eustathios 1
+	 Saša 0
+	 Gerard 1
+	 Babur 0	
+	 Marin 0
+	 Marko 1
+
+Step 5
+	1) cut -d ":" -f 4 testPasswd.txt |sort -g | uniq	Outputs the following:
+		0
+		1
+		2
+		3
+		5
+		99
+		999
+		1000
+		1337
+
+	2) cut -d ":" -f 4 testPasswd.txt |sort -g | uniq >  ~/GroupIDs.txt	Pipes the above into a file named GroupIDs.txt
+		(It creates it if it does not already exist)
+
+	3) cut -d ":" -f 1,6 testPasswd.txt | grep -E "^m|^w|^s"	Displays the following:
+		sys:/dev
+		mail:/var/mail
+		www-data:/var/www
+		syslog:/home/syslog
+		whoopsie:/nonexistent
+		sshd:/var/run/sshd
+		mysql:/nonexistent
+
+Step 6
+	1)sed s/[a-zA-Z]*//g leetSpeak.txt > output.txt		Removes all letters in the text
+
+	2)sed s/[0-9]*//g leetSpeak.txt > output.txt		Removes all numbers in the text
+
+	3)sed s/[0-9]*/_/g leetSpeak.txt > output.txt		Replaces all numbers with underscores
+
+	4)sed s/0/o/g leetSpeak.txt | sed s/1/i/g | sed s/3/e/g | sed s/4/a/g | sed s/5/s/g | sed s/7/t/g > output.txt
+		The following is how to do the above without piping: 
+	  sed y/0\1\3\4\5\7/o\i\e\a\s\t/ leetSpeak.txt > output.txt
+
+	5)If you want to run the script on other files, save the script as a file (i.e. script) and run the following: 
+		sed -f script [FILENAME] > output.txt
+
+Step 7
+	1) awk '{ FS=" "; } NR > 1 { print $1,$2,(($3+$4+$5+$6+$7)/5)*100,"%"; }' grades.txt 		Gives the following: 
+		Ryan Slaven 80 %
+		Jephthah Eustathios 40 %
+		Andreas Saša 60 %
+		Godofredo Gerard 100 %
+		Edwin Babur 80 %
+		Ahmad Marin 0 %
+		Jett Marko 80 %
+
+	2) awk '{ FS=" "; } NR > 1 { sum += $3,print sum/5,"%"; }' grades.txt
+
+Step 8
+	1) egrep '^[0-9]{3}-[0-9]{3}-[0-9]{4}$' regex_practice_data.txt | wc -l
+		Gives that there are 767 phone numbers
+
+	2) egrep '^303-441-[0-9]{4}$' regex_practice_data.txt | wc -l
+		Gives that there are 51 Boulder phone numbers
+
+	3) egrep '[A-Za-z0-9_\.\-]*@[A-Za-z]*\.[A-Za-z]*' regex_practice_data.txt | wc -l
+		Gives that there are 17705 email addresses
+
+	4) egrep '[A-Za-z0-9_\.\-]*@[A-Za-z]*\.gov' regex_practice_data.txt | wc -l
+		Gives that there are 52 govt email addresses
+
+	5) egrep '^[A-Ma-m][A-Za-z]*.[A-Za-z]*@[A-Za-z]*\.[A-Za-z]*' regex_practice_data.txt | wc -l 
+		Gives that there are 11240 email addresses in the first.last format and involve first names starting with a - m

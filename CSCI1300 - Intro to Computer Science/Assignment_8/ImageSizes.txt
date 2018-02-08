@@ -1,0 +1,6 @@
+Intro graphic		Height: 3.25"	Width: 6.22"
+Theory Graphic		Height: 2.67"	Width: 4.08"
+Setup Graphic(Left)	Height: 5.25"	Width: 6.48"
+Setup Graphic(Right)	Height: 5.25" 	Width: 7.00"
+Analysis Graphic	Height: 7.25"	Width: 7.33"
+CU-Prime Logo		Height: 2.72"	Width: 3.77"

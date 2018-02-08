@@ -1,0 +1,13 @@
+FilterLockDriver
+	Average time for 8 threads: 1473197 nanoseconds
+	Average time for 64 threads: 53179348 nanoseconds
+
+TreeLockDriver
+	Average time for 8 threads: 1539522 nanoseconds
+	Average time for 64 threads: 5647161 nanoseconds
+
+FilterLock : TreeLock ratio
+	8 Threads:	0.956918446
+	64 Threads:	9.417005819
+
+

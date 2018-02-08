@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;LinkedListSingleThreaded&apos; to &apos;ConcurrentSingleLinkedList&apos;&#x0A;- Original project: &apos;HW3&apos;&#x0A;- Original element: &apos;LinkedListSingleThreaded&apos;&#x0A;- Renamed element: &apos;ConcurrentSingleLinkedList&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LinkedListSingleThreaded&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{LinkedListSingleThreaded.java[LinkedListSingleThreaded" matchStrategy="1" name="ConcurrentSingleLinkedList" qualified="false" references="true" similarDeclarations="false" stamp="1489950246661" textual="false" version="1.0"/>
+</session>

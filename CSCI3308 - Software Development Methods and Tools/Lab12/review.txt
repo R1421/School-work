@@ -1,0 +1,29 @@
+Review of snippet1.py
+
+The function, variable, and class names are not at all understandable. What are they and what do they do?!
+Needs more comments
+Completely unintelligiblle...well almost completely
+Too much nesting
+
+
+Review of snippet2.py
+
+Comments ask questions rather than explaining something about the code
+Some comments explain that which is understandable by reading the code
+Comment at bottom is useless...
+
+
+Review of snippet3.py
+
+Hardcoded path won't exist on other computers
+There is no path variable declaton in any method other than init, but is referred to in several methods
+Other variables are never declared or created before being referenced
+Directions comment not needed
+Name == Main conditional at the bottom doesn't make sense. There is no main function
+
+
+Review of snippet4.py
+
+Still no declaration of self.path that is acccessable by all methods
+
+

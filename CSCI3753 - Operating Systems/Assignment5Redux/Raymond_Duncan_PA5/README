@@ -1,0 +1,9 @@
+Raymond Duncan
+CSCI 3753
+William Mortl
+PA5
+
+To build and run the code, simply remain in this directory and run the make command.
+
+Once the code has compiled, just run the following command:
+	./pa5-encfs <Key phrase> <Mirror directory> <Mount point> <optional fuse flags>

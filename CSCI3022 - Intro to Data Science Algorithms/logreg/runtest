@@ -1,0 +1,1 @@
+python3 logreg.py --positive toy_positive.txt --negative toy_negative.txt --vocab toy_vocab.txt

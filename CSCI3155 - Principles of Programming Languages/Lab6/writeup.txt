@@ -1,0 +1,46 @@
+Exercise 1:
+
+re ::= union
+union ::= intersect | union '|' intersect
+intersect ::= concat | intersect & concat
+concat ::= not | not concat
+not ::= ~ not | star
+star ::= atom* | atom+ | atom? | atom | atom star
+atom ::= ! | # | . | c | '('re')'
+
+
+Exercise 2:
+
+The reason a left recursive grammar like the one above doesn't work for recursive descent parsing with left associativity is that in checking for, say, a union '|' intersect when the intersect fails causes the parser to enter in an infinite loop since it is a production of the non-terminal union and it's going to try to check for a union at the beginning over and over, forever.
+
+
+Exercise 3:
+
+Here's an EBNF grammar for the that can be used to create the same language as the above.
+
+re ::= union
+union ::= intersect {'|' intersect}
+intersect ::= concat {& concat}
+concat ::= not {_ not}
+not ::= {~} star
+star ::= (atom* | atom+ | atom? | atom) {atom* | atom+ | atom? | atom}
+atom ::= ! | # | . | c | '('re')'
+
+
+Exercise 4:
+
+Here's a right recursive, left associative grammar converted from the above EBNF grammar
+
+re ::= union
+union ::= intersect unions
+unions ::= eps | '|' intersect unions
+intersect ::= concat intersects
+intersects ::= eps | & concat intersects
+concat ::= not concats
+concats ::= eps | _ not concats
+not ::= nots star
+nots ::= eps | ~ nots star
+star ::= atom stars
+stars ::= eps | atom stars
+atom ::= ! | # | . | c | '('re')'
+
